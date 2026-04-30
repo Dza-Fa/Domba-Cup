@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>page-c7dd3b8e-ca55-4941-833a-31e2d174410d</title>
+  <link href="./dist/output.css" rel="stylesheet">
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Inter', 'sans-serif'],
+        },
+      }
+    }
+  }
+</script>
+</head>
+<body>
+  <!-- Header Section: Absolute positioned over the hero section -->
+<section id="section-header" class="absolute top-0 left-0 w-full z-50 py-6">
+  <div class="max-w-7xl mx-auto px-4 md:px-8 flex justify-between items-center">
+    
+    <!-- Logo -->
+    <div class="flex items-center gap-3 cursor-pointer">
+      <i class="fa-solid fa-futbol text-[#ff3a1a] text-2xl"></i>
+      <span class="text-white font-bold text-xl tracking-wider">DOMBA CUP</span>
+    </div>
+    
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex items-center gap-8">
+      <a href="#about" class="text-[#f5f5f0] hover:text-[#ffd600] text-sm font-medium transition-colors">Tentang</a>
+      <a href="#" class="text-[#f5f5f0] hover:text-[#ffd600] text-sm font-medium transition-colors">Kategori</a>
+      <a href="#" class="text-[#f5f5f0] hover:text-[#ffd600] text-sm font-medium transition-colors">Jadwal</a>
+      <a href="#" class="text-[#f5f5f0] hover:text-[#ffd600] text-sm font-medium transition-colors">Tiket</a>
+    </nav>
+    
+    <!-- CTA Button -->
+    <a href="#" class="bg-[#ff3a1a] text-white px-6 py-2.5 rounded-sm border-2 border-[#ff3a1a] shadow-[4px_4px_0px_0px_#ffd600] text-sm font-bold hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_#ffd600] transition-all uppercase tracking-wide">
+      Daftar Tim
+    </a>
+    
+  </div>
+</section>
+  <!-- Hero Section: Full screen height with background image, gradient overlay, and pattern -->
+<section id="section-hero" class="relative min-h-[900px] flex items-center justify-center bg-[#0d0d0d] overflow-hidden">
+  
+  <!-- Background Layers -->
+  <div class="absolute inset-0 bg-[url('./assets//0815afa23edf1e40e0d3547efe769525364d2826.png')] bg-cover bg-center opacity-30"></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-[#0d0d0d]/80 via-[#0d0d0d]/50 to-[#0d0d0d]"></div>
+  <div class="absolute inset-0 bg-[url('./assets//a180d3109a5cb6b9b9aa60d81730446ebe275473.png')] bg-repeat opacity-50 mix-blend-overlay"></div>
+  
+  <!-- Main Content Container -->
+  <div class="relative z-10 max-w-5xl mx-auto px-4 flex flex-col items-center text-center pt-32 pb-20">
+    
+    <!-- Status Badge -->
+    <div class="border border-[#ffd600]/30 bg-[#ffd600]/10 text-[#ffd600] px-5 py-1.5 rounded-full text-sm font-medium mb-8 backdrop-blur-sm uppercase tracking-wide">
+      Pendaftaran Dibuka
+    </div>
+    
+    <!-- Primary Headline -->
+    <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 bg-gradient-to-r from-[#ffd600] to-[#ff3a1a] text-transparent bg-clip-text drop-shadow-[2px_2px_4px_rgba(255,58,26,0.3)] uppercase tracking-tight">
+      DOMBA CUP 2025
+    </h1>
+    
+    <!-- Subtitle -->
+    <p class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed">
+      Battle for Glory. <span class="text-[#ff3a1a] font-semibold">Register Your Team.</span> Own the Field.
+    </p>
+    
+    <!-- Action Buttons -->
+    <div class="flex flex-col sm:flex-row gap-6 mb-20">
+      <button class="bg-[#ff3a1a] text-white px-10 py-4 rounded-sm border-2 border-[#ff3a1a] shadow-[6px_6px_0px_0px_#ffd600] font-bold tracking-wider hover:translate-y-[2px] hover:shadow-[4px_4px_0px_0px_#ffd600] transition-all uppercase">
+        Daftar Tim
+      </button>
+      <button class="border-2 border-[#ffd600] text-[#ffd600] px-10 py-4 rounded-sm shadow-[6px_6px_0px_0px_rgba(255,214,0,0.3)] font-bold tracking-wider hover:translate-y-[2px] hover:shadow-[4px_4px_0px_0px_rgba(255,214,0,0.3)] transition-all uppercase bg-black/20 backdrop-blur-sm">
+        Beli Tiket
+      </button>
+    </div>
+    
+    <!-- Countdown Timer Widget -->
+    <div class="bg-[#1a1a1a]/70 border border-white/10 rounded-lg p-6 md:p-8 flex flex-col items-start gap-6 backdrop-blur-md relative overflow-hidden w-full max-w-3xl mx-auto shadow-2xl">
+      <!-- Decorative Left Border -->
+      <div class="absolute left-0 top-0 bottom-0 w-2 bg-[#ff3a1a]"></div>
+      
+      <h3 class="text-gray-400 text-sm font-medium uppercase tracking-wider pl-4">Kickoff Dimulai Dalam</h3>
+      
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full pl-4">
+        <!-- Days -->
+        <div class="bg-[#0d0d0d]/50 border border-white/5 rounded-md p-4 flex flex-col items-center justify-center">
+          <span class="text-3xl md:text-4xl font-bold text-white mb-1">45</span>
+          <span class="text-[#6b7280] text-xs uppercase tracking-wider">Hari</span>
+        </div>
+        <!-- Hours -->
+        <div class="bg-[#0d0d0d]/50 border border-white/5 rounded-md p-4 flex flex-col items-center justify-center">
+          <span class="text-3xl md:text-4xl font-bold text-white mb-1">12</span>
+          <span class="text-[#6b7280] text-xs uppercase tracking-wider">Jam</span>
+        </div>
+        <!-- Minutes -->
+        <div class="bg-[#0d0d0d]/50 border border-white/5 rounded-md p-4 flex flex-col items-center justify-center">
+          <span class="text-3xl md:text-4xl font-bold text-white mb-1">30</span>
+          <span class="text-[#6b7280] text-xs uppercase tracking-wider">Menit</span>
+        </div>
+        <!-- Seconds -->
+        <div class="bg-[#0d0d0d]/50 border border-white/5 rounded-md p-4 flex flex-col items-center justify-center">
+          <span class="text-3xl md:text-4xl font-bold text-[#ff3a1a] mb-1">00</span>
+          <span class="text-[#6b7280] text-xs uppercase tracking-wider">Detik</span>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+  <!-- About Section: Two column layout with text/stats on left and image on right -->
+<section id="section-about" class="bg-[#111111] py-24 border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    
+    <!-- Left Column: Text Content & Stats -->
+    <div>
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 uppercase tracking-wide">
+        Tentang <span class="text-[#ff3a1a]">Turnamen</span>
+      </h2>
+      
+      <!-- Highlighted Paragraph -->
+      <div class="border-l-2 border-[#ffd600] pl-6 mb-8">
+        <p class="text-[#eaeae0] text-lg leading-relaxed">
+          Turnamen sepak bola amatir terbesar se-wilayah. Terbuka untuk semua tim lokal yang siap membuktikan kemampuan mereka di lapangan hijau.
+        </p>
+      </div>
+      
+      <!-- Secondary Paragraph -->
+      <p class="text-[#9ca3af] mb-12 leading-relaxed">
+        Domba Cup 2025 hadir dengan format yang lebih kompetitif dan hadiah yang lebih besar. Kami mengundang tim-tim terbaik untuk berpartisipasi dalam perayaan sepak bola amatir paling bergengsi tahun ini.
+      </p>
+      
+      <!-- Stats Grid -->
+      <div class="grid grid-cols-3 gap-4 md:gap-6">
+        <!-- Stat: Teams -->
+        <div class="bg-[#1a1a1a]/70 border border-[#ff3a1a] rounded-lg p-6 flex flex-col items-center text-center backdrop-blur-sm hover:bg-[#1a1a1a] transition-colors">
+          <i class="fa-solid fa-users text-[#ffd600] text-2xl mb-3"></i>
+          <span class="text-2xl font-bold text-white mb-1">32</span>
+          <span class="text-[#9ca3af] text-xs uppercase tracking-wider">Tim</span>
+        </div>
+        <!-- Stat: Venues -->
+        <div class="bg-[#1a1a1a]/70 border border-[#ff3a1a] rounded-lg p-6 flex flex-col items-center text-center backdrop-blur-sm hover:bg-[#1a1a1a] transition-colors">
+          <i class="fa-solid fa-location-dot text-[#ffd600] text-2xl mb-3"></i>
+          <span class="text-2xl font-bold text-white mb-1">6</span>
+          <span class="text-[#9ca3af] text-xs uppercase tracking-wider">Venue</span>
+        </div>
+        <!-- Stat: Prize -->
+        <div class="bg-[#1a1a1a]/70 border border-[#ff3a1a] rounded-lg p-6 flex flex-col items-center text-center backdrop-blur-sm hover:bg-[#1a1a1a] transition-colors">
+          <i class="fa-solid fa-trophy text-[#ffd600] text-2xl mb-3"></i>
+          <div class="flex items-baseline gap-1 mb-1">
+            <span class="text-2xl font-bold text-white">50</span>
+            <span class="text-white text-sm font-bold">jt</span>
+          </div>
+          <span class="text-[#9ca3af] text-xs uppercase tracking-wider">Hadiah</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Right Column: Featured Image -->
+    <div class="relative group">
+      <img src="./assets//ecc9afa0e55f7031af862dfe3592c7757dbbe58c.png" alt="Football Player in Action" class="w-full h-auto object-cover rounded-lg shadow-2xl relative z-10 group-hover:scale-[1.02] transition-transform duration-500">
+    </div>
+    
+  </div>
+</section>
+  <!-- Footer Section: Dark background with pattern, multi-column layout -->
+<section id="section-footer" class="bg-[#111111] pt-20 pb-10 border-t border-white/10 relative overflow-hidden">
+  
+  <!-- Subtle Pattern Background -->
+  <div class="absolute inset-0 bg-[url('./assets//a180d3109a5cb6b9b9aa60d81730446ebe275473.png')] bg-repeat opacity-10 pointer-events-none"></div>
+  
+  <div class="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
+    
+    <!-- Top Footer Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+      
+      <!-- Column 1: Brand & Socials -->
+      <div class="md:col-span-5">
+        <div class="flex items-center gap-3 mb-6">
+          <i class="fa-solid fa-futbol text-[#ff3a1a] text-2xl"></i>
+          <span class="text-white font-bold text-xl tracking-wider">DOMBA CUP</span>
+        </div>
+        <p class="text-[#9ca3af] text-sm leading-relaxed mb-8 max-w-sm">
+          Turnamen sepak bola amatir terbesar yang menjunjung tinggi sportivitas dan semangat kompetisi.
+        </p>
+        <div class="flex gap-4">
+          <a href="#" aria-label="Instagram" class="w-10 h-10 rounded-full bg-[#1a1a1a]/70 border border-white/10 flex items-center justify-center text-white hover:bg-[#ff3a1a] hover:border-[#ff3a1a] transition-all hover:-translate-y-1">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="#" aria-label="YouTube" class="w-10 h-10 rounded-full bg-[#1a1a1a]/70 border border-white/10 flex items-center justify-center text-white hover:bg-[#ff3a1a] hover:border-[#ff3a1a] transition-all hover:-translate-y-1">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+          <a href="#" aria-label="Facebook" class="w-10 h-10 rounded-full bg-[#1a1a1a]/70 border border-white/10 flex items-center justify-center text-white hover:bg-[#ff3a1a] hover:border-[#ff3a1a] transition-all hover:-translate-y-1">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Column 2: Quick Links -->
+      <div class="md:col-span-3">
+        <h4 class="text-white font-bold mb-6 uppercase tracking-wider">Tautan Cepat</h4>
+        <ul class="flex flex-col gap-4">
+          <li><a href="#" class="text-[#9ca3af] hover:text-[#ffd600] transition-colors text-sm flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs text-[#ff3a1a]"></i> Beranda</a></li>
+          <li><a href="#" class="text-[#9ca3af] hover:text-[#ffd600] transition-colors text-sm flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs text-[#ff3a1a]"></i> Daftar Tim</a></li>
+          <li><a href="#" class="text-[#9ca3af] hover:text-[#ffd600] transition-colors text-sm flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs text-[#ff3a1a]"></i> Jadwal Pertandingan</a></li>
+          <li><a href="#" class="text-[#9ca3af] hover:text-[#ffd600] transition-colors text-sm flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs text-[#ff3a1a]"></i> Beli Tiket</a></li>
+          <li><a href="#" class="text-[#9ca3af] hover:text-[#ffd600] transition-colors text-sm flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs text-[#ff3a1a]"></i> Tentang Kami</a></li>
+        </ul>
+      </div>
+      
+      <!-- Column 3: Contact Info -->
+      <div class="md:col-span-4">
+        <h4 class="text-white font-bold mb-6 uppercase tracking-wider">Kontak</h4>
+        <ul class="flex flex-col gap-5">
+          <li class="flex items-start gap-4 text-[#9ca3af] text-sm group cursor-pointer">
+            <i class="fa-solid fa-envelope text-[#ff3a1a] mt-1 group-hover:scale-110 transition-transform"></i>
+            <span class="group-hover:text-white transition-colors">info@dombacup.com</span>
+          </li>
+          <li class="flex items-start gap-4 text-[#9ca3af] text-sm group cursor-pointer">
+            <i class="fa-brands fa-whatsapp text-[#22c55e] mt-1 text-lg group-hover:scale-110 transition-transform"></i>
+            <span class="group-hover:text-white transition-colors">+62 812 3456 7890</span>
+          </li>
+          <li class="flex items-start gap-4 text-[#9ca3af] text-sm group cursor-pointer">
+            <i class="fa-solid fa-location-dot text-[#ff3a1a] mt-1 group-hover:scale-110 transition-transform"></i>
+            <span class="group-hover:text-white transition-colors leading-relaxed">Sekretariat Domba Cup<br>Jl. Stadion Utama No. 10</span>
+          </li>
+        </ul>
+      </div>
+      
+    </div>
+    
+    <!-- Bottom Footer: Copyright & Legal -->
+    <div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 border-t border-white/10">
+      <p class="text-[#6b7280] text-sm">
+        &copy; 2025 Domba Cup. All Rights Reserved.
+      </p>
+      <div class="flex items-center gap-4 text-[#6b7280] text-sm">
+        <a href="#" class="hover:text-white transition-colors">Syarat & Ketentuan</a>
+        <span class="text-white/20">|</span>
+        <a href="#" class="hover:text-white transition-colors">Kebijakan Privasi</a>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+  <script>
+// No JavaScript code required here currently.
+  </script>
+</body>
+</html>
