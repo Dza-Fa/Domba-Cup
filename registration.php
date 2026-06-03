@@ -4,48 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Domba Cup - Registration</title>
-  <link href="./dist/output.css" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        fontFamily: {
-          sans: ['Inter', 'sans-serif'],
-        },
-        colors: {
-          brand: {
-            red: '#ff3a1a',
-            yellow: '#ffd600',
-          },
-          dark: {
-            900: '#111111',
-            800: '#1a1a1a',
-            700: '#2a2a2a',
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: {
+            brand: { red: '#ff3a1a', yellow: '#ffd600' },
+            dark: { 900: '#111111', 800: '#1a1a1a', 700: '#2a2a2a' }
           }
         }
       }
     }
-  }
-</script>
-<style>
-  /* Hide scrollbar for clean UI but keep functionality */
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-  .no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-</style>
+  </script>
+  <style>
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
 </head>
-<body>
+<body class="bg-dark-900 text-white font-sans antialiased">
   <header class="bg-dark-900 border-b border-white/10 sticky top-0 z-50">
   <div class="max-w-7xl mx-auto px-6 lg:px-20 h-20 flex items-center justify-between">
     <!-- Logo -->
     <div class="flex items-center gap-3">
-      <a href="./index.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+      <a href="./index.php" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
         <img src="./assets/registration/14_2704.svg" alt="Logo" class="w-8 h-8">
         <span class="text-white font-light tracking-wider text-lg">DOMBA CUP</span>
       </a>
@@ -53,18 +37,29 @@
 
     <!-- Desktop Nav -->
     <nav class="hidden md:flex items-center gap-8">
-      <a href="./index.html" class="text-white text-sm font-light">BERANDA</a>
+      <a href="./index.php" class="text-white text-sm font-light">BERANDA</a>
       <a href="#" class="text-gray-400 hover:text-white text-sm font-light transition-colors">KATEGORI</a>
       <a href="#" class="text-gray-400 hover:text-white text-sm font-light transition-colors">JADWAL</a>
-      <a href="./ticket.html" class="text-gray-400 hover:text-white text-sm font-light transition-colors">TIKET</a>
+      <a href="./ticket.php" class="text-gray-400 hover:text-white text-sm font-light transition-colors">TIKET</a>
     </nav>
 
     <!-- CTA Button -->
-    <a href="./registration.html" class="bg-brand-red hover:bg-red-600 text-white px-6 py-2.5 rounded text-sm shadow-[4px_4px_0px_0px_#ffd600] transition-all active:translate-y-1 active:shadow-[0px_0px_0px_0px_#ffd600] inline-block">
+    <a href="./registration.php" class="bg-brand-red hover:bg-red-600 text-white px-6 py-2.5 rounded text-sm shadow-[4px_4px_0px_0px_#ffd600] transition-all active:translate-y-1 active:shadow-[0px_0px_0px_0px_#ffd600] inline-block">
       DAFTAR TIM
     </a>
+    <!-- Mobile menu toggle -->
+    <button id="mobile-menu-btn-reg" class="md:hidden text-white text-2xl ml-3" aria-label="Menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
   </div>
 </header>
+  <nav id="mobile-nav-reg" class="hidden md:hidden absolute top-full left-0 w-full bg-dark-800 border-b border-white/10 p-4 space-y-3 z-40">
+    <a href="./index.php" class="block text-white text-sm">BERANDA</a>
+    <a href="#" class="block text-gray-400 text-sm">KATEGORI</a>
+    <a href="#" class="block text-gray-400 text-sm">JADWAL</a>
+    <a href="./ticket.php" class="block text-gray-400 text-sm">TIKET</a>
+    <a href="./registration.php" class="block bg-brand-red text-white px-4 py-2 rounded text-sm text-center">DAFTAR TIM</a>
+  </nav>
   <section class="relative bg-dark-900 pt-16 pb-24 overflow-hidden">
   <!-- Background Image with Overlay -->
   <div class="absolute inset-0 z-0">
@@ -262,7 +257,7 @@
     <!-- Section Header -->
     <div class="mb-12">
       <p class="text-brand-red text-sm font-light tracking-wider mb-1 uppercase">Formulir Pendaftaran</p>
-      <h2 class="text-3xl font-light text-white">ISI <span class="text-brand-yellow">DATA TIM</span></h2
+      <h2 class="text-3xl font-light text-white">ISI <span class="text-brand-yellow">DATA TIM</span></h2>
     </div>
 
     <!-- Stepper -->
@@ -334,48 +329,49 @@
 
       <!-- Form Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-        <!-- Nama Tim -->
+        <!-- Nama Tim (fixed malformed tag) -->
         <div class="col-span-1 md:col-span-2">
-          <label class="block text-white text-sm mb-2">Nama Tim <span class="text-brand-red">*</span></label>
-          <input type="text" value="Garuda FC Bandung" class="w-full bg-dark-700 border border-white/10 rounded-md px-4 py-3 text-white focus:border-brand-red outline-none transition-colors">
+          <label class="block text-white/90 text-sm font-medium mb-2">Nama Tim <span class="text-brand-red">*</span></label>
+          <input type="text" id="reg-team-name" value="Garuda FC Bandung" class="w-full rounded-lg border border-white/10 bg-dark-700 px-4 py-3 text-white placeholder:text-gray-500 focus:border-brand-red focus:outline-none">
         </div>
 
         <!-- Asal Kota -->
         <div>
-          <label class="block text-white text-sm mb-2">Asal Kota / Daerah <span class="text-brand-red">*</span></label>
-          <input type="text" value="Bandung, Jawa Barat" class="w-full bg-dark-700 border border-white/10 rounded-md px-4 py-3 text-white focus:border-brand-red outline-none transition-colors">
+          <label class="block text-white/90 text-sm font-medium mb-2">Asal Kota <span class="text-brand-red">*</span></label>
+          <input type="text" id="reg-origin" value="Bandung, Jawa Barat" class="w-full rounded-lg border border-white/10 bg-dark-700 px-4 py-3 text-white placeholder:text-gray-500 focus:border-brand-red focus:outline-none">
         </div>
 
         <!-- Kategori (Readonly/Select) -->
         <div>
-          <label class="block text-white text-sm mb-2">Kategori <span class="text-brand-red">*</span></label>
-          <div class="w-full bg-dark-700 border border-white/10 rounded-md px-4 py-3 text-white flex justify-between items-center opacity-90 cursor-not-allowed">
-            <span>U-17 (Under 17 Tahun) â€” Rp 250.000</span>
-          </div>
+          <label class="block text-white/90 text-sm font-medium mb-2">Kategori <span class="text-brand-red">*</span></label>
+          <select id="reg-category" class="w-full rounded-lg border border-white/10 bg-dark-700 px-4 py-3 text-white focus:border-brand-red focus:outline-none">
+            <option value="U-17">U-17 — Rp 250.000</option>
+            <option value="Dewasa">Dewasa — Rp 350.000</option>
+            <option value="Veteran">Veteran — Rp 300.000</option>
+          </select>
         </div>
 
         <!-- Nama Ketua -->
         <div>
-          <label class="block text-white text-sm mb-2">Nama Ketua Tim <span class="text-brand-red">*</span></label>
-          <input type="text" value="Ahmad Reza Pratama" class="w-full bg-dark-700 border border-white/10 rounded-md px-4 py-3 text-white focus:border-brand-red outline-none transition-colors">
+          <label class="block text-white/90 text-sm font-medium mb-2">Nama Ketua Tim <span class="text-brand-red">*</span></label>
+          <input type="text" id="reg-captain-name" value="Ahmad Reza Pratama" class="w-full rounded-lg border border-white/10 bg-dark-700 px-4 py-3 text-white placeholder:text-gray-500 focus:border-brand-red focus:outline-none">
         </div>
 
         <!-- No HP -->
         <div>
-          <label class="block text-white text-sm mb-2">No. HP Ketua <span class="text-brand-red">*</span></label>
+          <label class="block text-white/90 text-sm font-medium mb-2">No. HP Ketua <span class="text-brand-red">*</span></label>
           <div class="flex">
-            <div class="bg-dark-700 border border-white/10 border-r-0 rounded-l-md px-4 py-3 flex items-center gap-2">
-              <img src="./assets/registration/14_2238.svg" alt="flag" class="w-4 h-3">
-              <span class="text-gray-400">+62</span>
+            <div class="rounded-l-lg border border-r-0 border-white/10 bg-dark-700 px-4 py-3 flex items-center gap-2">
+              <span class="text-gray-400 text-sm">+62</span>
             </div>
-            <input type="text" value="812 3456 7890" class="w-full bg-dark-700 border border-white/10 rounded-r-md px-4 py-3 text-white focus:border-brand-red outline-none transition-colors">
+            <input type="tel" id="reg-captain-phone" value="812 3456 7890" class="w-full rounded-r-lg border border-white/10 bg-dark-700 px-4 py-3 text-white placeholder:text-gray-500 focus:border-brand-red focus:outline-none">
           </div>
         </div>
 
         <!-- Email -->
         <div class="col-span-1 md:col-span-2">
-          <label class="block text-white text-sm mb-2">Email Tim <span class="text-brand-red">*</span></label>
-          <input type="email" value="garudafc.bdg@gmail.com" class="w-full bg-dark-700 border border-white/10 rounded-md px-4 py-3 text-white focus:border-brand-red outline-none transition-colors">
+          <label class="block text-white/90 text-sm font-medium mb-2">Email Tim <span class="text-brand-red">*</span></label>
+          <input type="email" id="reg-captain-email" value="garudafc.bdg@gmail.com" class="w-full rounded-lg border border-white/10 bg-dark-700 px-4 py-3 text-white placeholder:text-gray-500 focus:border-brand-red focus:outline-none">
         </div>
       </div>
 
@@ -383,19 +379,19 @@
       <div class="mb-10">
         <label class="block text-white text-sm mb-4">Jumlah Pemain Terdaftar <span class="text-brand-red">*</span></label>
         <div class="flex items-center gap-4">
-          <button class="w-12 h-12 bg-dark-700 border border-white/10 rounded flex items-center justify-center hover:bg-dark-600 transition">
+          <button id="player-minus" class="w-12 h-12 bg-dark-700 border border-white/10 rounded flex items-center justify-center hover:bg-dark-600 transition">
             <img src="./assets/registration/14_2256.svg" alt="minus" class="w-4 h-4">
           </button>
           
           <div class="flex-1 bg-dark-700 border border-white/10 rounded h-12 flex items-center justify-center relative">
-            <span class="text-white font-light text-lg">16</span>
+            <span id="player-count-display" class="text-white font-light text-lg">16</span>
             <!-- Progress Bar -->
             <div class="absolute bottom-0 left-0 right-0 h-1 bg-dark-900 rounded-b">
-              <div class="h-full bg-gradient-to-r from-brand-red to-brand-yellow rounded-b" style="width: 65%;"></div>
+              <div id="player-progress-bar" class="h-full bg-gradient-to-r from-brand-red to-brand-yellow rounded-b" style="width: 65%;"></div>
             </div>
           </div>
           
-          <button class="w-12 h-12 bg-dark-700 border border-white/10 rounded flex items-center justify-center hover:bg-dark-600 transition">
+          <button id="player-plus" class="w-12 h-12 bg-dark-700 border border-white/10 rounded flex items-center justify-center hover:bg-dark-600 transition">
             <img src="./assets/registration/14_2262.svg" alt="plus" class="w-4 h-4">
           </button>
           
@@ -412,12 +408,12 @@
 
       <!-- Action Buttons -->
       <div class="flex flex-col sm:flex-row justify-end gap-4 pt-6 border-t border-white/10">
-        <button class="bg-brand-red hover:bg-red-600 text-white px-8 py-3 rounded font-light flex items-center justify-center gap-2 transition-colors">
-          Lanjut ke Data Pemain
-          <img src="./assets/registration/14_2279.svg" alt="arrow" class="w-4 h-4">
+        <button id="submit-registration" type="button" class="bg-brand-red hover:bg-red-600 text-white px-8 py-3 rounded font-light flex items-center justify-center gap-2 transition-colors">
+          Kirim Pendaftaran
+          <img src="./assets/registration/14_2279.svg" alt="arrow" class="w-4 h-4 rotate-90">
         </button>
       </div>
-
+      <div id="registration-feedback" class="hidden text-sm mt-2"></div>
     </div>
   </div>
 </section>
@@ -539,11 +535,11 @@
       <div class="md:col-span-3">
         <h4 class="text-white font-light mb-6">Tautan Cepat</h4>
         <ul class="space-y-3">
-          <li><a href="./index.html" class="text-gray-400 hover:text-white text-sm transition-colors">Beranda</a></li>
-          <li><a href="./registration.html" class="text-gray-400 hover:text-white text-sm transition-colors">Daftar Tim</a></li>
+          <li><a href="./index.php" class="text-gray-400 hover:text-white text-sm transition-colors">Beranda</a></li>
+          <li><a href="./registration.php" class="text-gray-400 hover:text-white text-sm transition-colors">Daftar Tim</a></li>
           <li><a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Jadwal Pertandingan</a></li>
-          <li><a href="./ticket.html" class="text-gray-400 hover:text-white text-sm transition-colors">Beli Tiket</a></li>
-          <li><a href="./index.html" class="text-gray-400 hover:text-white text-sm transition-colors">Tentang Kami</a></li>
+          <li><a href="./ticket.php" class="text-gray-400 hover:text-white text-sm transition-colors">Beli Tiket</a></li>
+          <li><a href="./index.php" class="text-gray-400 hover:text-white text-sm transition-colors">Tentang Kami</a></li>
         </ul>
       </div>
 
@@ -580,7 +576,147 @@
 </footer>
 
   <script>
-/* Empty as requested */
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('mobile-menu-btn-reg');
+    const mobileNav = document.getElementById('mobile-nav-reg');
+    if (menuBtn && mobileNav) {
+      menuBtn.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
+    }
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href === '#') return;
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          if (mobileNav) mobileNav.classList.add('hidden');
+        }
+      });
+    });
+
+    // Multi-step form: steps 2-4 not yet implemented; keep step 1 visible only
+    const stepContents = document.querySelectorAll('.step-content');
+    const stepperSteps = document.querySelectorAll('.stepper-step');
+    stepperSteps.forEach((el, idx) => {
+      if (idx !== 0) {
+        el.style.opacity = '0.4';
+        el.style.pointerEvents = 'none';
+      }
+    });
+    if (stepContents.length > 1) {
+      stepContents.forEach((el, idx) => {
+        if (idx !== 0) el.style.display = 'none';
+      });
+    }
+
+    // Player count slider (11-22)
+    const playerDisplay = document.getElementById('player-count-display');
+    const minusBtn = document.getElementById('player-minus');
+    const plusBtn = document.getElementById('player-plus');
+    const progressBar = document.getElementById('player-progress-bar');
+    let playerCount = 16;
+    function updatePlayerUI() {
+      if (playerDisplay) playerDisplay.textContent = playerCount;
+      if (progressBar) {
+        const pct = ((playerCount - 11) / (22 - 11)) * 100;
+        progressBar.style.width = pct + '%';
+      }
+    }
+    if (minusBtn) minusBtn.addEventListener('click', () => {
+      if (playerCount > 11) { playerCount--; updatePlayerUI(); }
+    });
+    if (plusBtn) plusBtn.addEventListener('click', () => {
+      if (playerCount < 22) { playerCount++; updatePlayerUI(); }
+    });
+    updatePlayerUI();
+
+    // Accordion
+    document.querySelectorAll('.accordion-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const content = item.querySelector('.accordion-content');
+        const icon = item.querySelector('.accordion-icon');
+        if (!content) return;
+        if (content.classList.contains('hidden')) {
+          content.classList.remove('hidden');
+          if (icon) icon.style.transform = 'rotate(180deg)';
+        } else {
+          content.classList.add('hidden');
+          if (icon) icon.style.transform = 'rotate(0deg)';
+        }
+      });
+    });
+
+     // Accordion (safe: only elements with accordion-content)
+     document.querySelectorAll('.accordion-item').forEach(item => {
+       item.addEventListener('click', () => {
+         const content = item.querySelector('.accordion-content');
+         if (!content) return;
+         content.classList.toggle('hidden');
+       });
+     });
+
+     // API_BASE for local XAMPP
+    const API_BASE = '/Domba-Cup/api';
+
+    function setStatus(el, message, type) {
+      el.textContent = message;
+      el.className = 'text-sm mt-2 ' + (type === 'success' ? 'text-green-400' : 'text-red-400');
+      el.classList.remove('hidden');
+    }
+
+    document.getElementById('submit-registration').addEventListener('click', async () => {
+      const teamName = document.getElementById('reg-team-name')?.value.trim();
+      const category = document.getElementById('reg-category')?.value;
+      const captainName = document.getElementById('reg-captain-name')?.value.trim();
+      const captainPhone = document.getElementById('reg-captain-phone')?.value.trim();
+      const captainEmail = document.getElementById('reg-captain-email')?.value.trim();
+      const origin = document.getElementById('reg-origin')?.value.trim();
+      const feedback = document.getElementById('registration-feedback');
+
+      if (!teamName || !category || !captainName || !captainPhone || !captainEmail) {
+        setStatus(feedback, 'Semua field wajib diisi.', 'error');
+        return;
+      }
+
+      if (!captainEmail.includes('@')) {
+        setStatus(feedback, 'Format email tidak valid.', 'error');
+        return;
+      }
+
+      feedback.classList.add('hidden');
+      document.getElementById('submit-registration').disabled = true;
+
+      try {
+        const res = await fetch(API_BASE + '/register.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            team_name: teamName,
+            category: category,
+            captain_name: captainName,
+            captain_phone: captainPhone,
+            captain_email: captainEmail,
+            origin: origin,
+            total_price: category === 'U-17' ? 250000 : category === 'Dewasa' ? 350000 : 300000
+          })
+        });
+        const json = await res.json();
+        if (json.success) {
+          setStatus(feedback, 'Pendaftaran berhasil!', 'success');
+          document.getElementById('submit-registration').disabled = true;
+          document.getElementById('submit-registration').textContent = 'Terkirim ✓';
+        } else {
+          setStatus(feedback, json.message || 'Gagal mengirim pendaftaran.', 'error');
+          document.getElementById('submit-registration').disabled = false;
+        }
+      } catch (err) {
+        setStatus(feedback, 'Terjadi kesalahan koneksi.', 'error');
+        document.getElementById('submit-registration').disabled = false;
+      }
+    });
   </script>
 </body>
 </html>

@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DOMBA CUP - Beli Tiket</title>
-  <link href="./dist/output.css" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
 <script>
   tailwind.config = {
@@ -33,22 +32,33 @@
 <section id="section-header" class="fixed w-full z-50 bg-brand-card/85 backdrop-blur-sm border-b border-white/10">
   <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
     <!-- Logo Area -->
-      <a href="./index.html" class="text-white font-light text-xl tracking-wider hover:opacity-80 transition-opacity">DOMBA CUP</a>
+      <a href="./index.php" class="text-white font-light text-xl tracking-wider hover:opacity-80 transition-opacity">DOMBA CUP</a>
     
     <!-- Desktop Navigation Links -->
     <nav class="hidden md:flex items-center gap-8">
-      <a href="./index.html" class="text-[#f5f5f0] hover:text-white text-sm transition-colors">Tentang</a>
+      <a href="./index.php" class="text-[#f5f5f0] hover:text-white text-sm transition-colors">Tentang</a>
       <a href="#" class="text-[#f5f5f0] hover:text-white text-sm transition-colors">Kategori</a>
       <a href="#" class="text-[#f5f5f0] hover:text-white text-sm transition-colors">Jadwal</a>
-      <a href="./ticket.html" class="text-brand-yellow font-light text-sm border-b-2 border-brand-yellow pb-1">Tiket</a>
+      <a href="./ticket.php" class="text-brand-yellow font-light text-sm border-b-2 border-brand-yellow pb-1">Tiket</a>
     </nav>
     
     <!-- CTA Button -->
-    <a href="./registration.html" class="bg-brand-red text-white px-6 py-2 rounded-sm text-sm font-light shadow-[4px_4px_0px_0px_#ffd600] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_#ffd600] transition-all inline-block">
+    <a href="./registration.php" class="bg-brand-red text-white px-6 py-2 rounded-sm text-sm font-light shadow-[4px_4px_0px_0px_#ffd600] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_#ffd600] transition-all inline-block">
       DAFTAR TIM
     </a>
+    <!-- Mobile nav toggle -->
+    <button id="mobile-menu-btn-ticket" class="md:hidden text-white text-2xl ml-3" aria-label="Menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
   </div>
 </section>
+  <nav id="mobile-nav-ticket" class="hidden md:hidden absolute top-full left-0 w-full bg-brand-card/95 backdrop-blur-sm border-b border-white/10 p-4 space-y-3 z-40">
+    <a href="./index.php" class="block text-white text-sm">Beranda</a>
+    <a href="#" class="block text-gray-400 text-sm">Kategori</a>
+    <a href="#" class="block text-gray-400 text-sm">Jadwal</a>
+    <a href="./ticket.php" class="block text-brand-yellow text-sm">Tiket</a>
+    <a href="./registration.php" class="block bg-brand-red text-white px-4 py-2 rounded text-sm text-center">DAFTAR TIM</a>
+  </nav>
   <!-- Hero Banner Section -->
 <section id="section-hero" class="relative pt-32 pb-20 px-6 min-h-[600px] flex flex-col items-center justify-center text-center overflow-hidden bg-brand-dark">
   <!-- Background Image with Gradient Overlay -->
@@ -428,29 +438,33 @@
               <label class="block text-gray-400 text-sm mb-2">Nama Lengkap *</label>
               <div class="relative">
                 <img src="./assets/ticket/1_407.svg" class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4" alt="Input Icon">
-                <input type="text" value="Ahmad Fauzi" class="w-full bg-brand-darker border border-white/15 rounded-sm py-3 pl-10 pr-4 text-white focus:outline-none focus:border-brand-red">
+                <input type="text" id="ticket-buyer-name" value="Ahmad Fauzi" class="w-full bg-brand-darker border border-white/15 rounded-sm py-3 pl-10 pr-4 text-white focus:outline-none focus:border-brand-red">
               </div>
             </div>
             <div>
               <label class="block text-gray-400 text-sm mb-2">Email *</label>
               <div class="relative">
                 <img src="./assets/ticket/1_418.svg" class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4" alt="Input Icon">
-                <input type="email" value="ahmad@email.com" class="w-full bg-brand-darker border border-white/15 rounded-sm py-3 pl-10 pr-4 text-white focus:outline-none focus:border-brand-red">
+                <input type="email" id="ticket-buyer-email" value="ahmad@email.com" class="w-full bg-brand-darker border border-white/15 rounded-sm py-3 pl-10 pr-4 text-white focus:outline-none focus:border-brand-red">
               </div>
             </div>
             <div>
               <label class="block text-gray-400 text-sm mb-2">No. HP *</label>
               <div class="relative">
                 <img src="./assets/ticket/1_429.svg" class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4" alt="Input Icon">
-                <input type="tel" value="+62 812 3456 7890" class="w-full bg-brand-darker border border-white/15 rounded-sm py-3 pl-10 pr-4 text-white focus:outline-none focus:border-brand-red">
+                <input type="tel" id="ticket-buyer-phone" value="+62 812 3456 7890" class="w-full bg-brand-darker border border-white/15 rounded-sm py-3 pl-10 pr-4 text-white focus:outline-none focus:border-brand-red">
               </div>
             </div>
             <div>
               <label class="block text-gray-400 text-sm mb-2">Jumlah Tiket *</label>
               <div class="relative">
                 <img src="./assets/ticket/1_444.svg" class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4" alt="Input Icon">
-                <select class="w-full bg-brand-darker border border-white/15 rounded-sm py-3 pl-10 pr-4 text-white appearance-none focus:outline-none focus:border-brand-red">
+                <select id="ticket-quantity" class="w-full bg-brand-darker border border-white/15 rounded-sm py-3 pl-10 pr-4 text-white appearance-none focus:outline-none focus:border-brand-red">
+                  <option>1</option>
                   <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
                 </select>
               </div>
             </div>
@@ -582,15 +596,23 @@
             <span class="text-brand-yellow font-light text-xl">Rp 85.000</span>
           </div>
           
-          <!-- Submit Button -->
-          <button class="w-full bg-gradient-to-r from-brand-yellow to-brand-red text-black py-3 rounded-sm font-light text-sm flex justify-center items-center gap-2 hover:opacity-90 transition-opacity mb-4">
-            <img src="./assets/ticket/1_575.svg" class="w-4 h-4" alt="Pay Icon">
-            LANJUT BAYAR
-          </button>
-          
-          <p class="text-gray-500 text-xs text-center">
-            Dengan melanjutkan, kamu menyetujui syarat & ketentuan Domba Cup 2025
-          </p>
+           <!-- Submit Button -->
+           <button id="btn-submit-ticket" type="button" class="w-full bg-gradient-to-r from-brand-yellow to-brand-red text-black py-3 rounded-sm font-light text-sm flex justify-center items-center gap-2 hover:opacity-90 transition-opacity mb-4">
+             <img src="./assets/ticket/1_575.svg" class="w-4 h-4" alt="Pay Icon">
+             LANJUT BAYAR
+           </button>
+           <p id="ticket-feedback" class="text-xs text-center hidden mb-4"></p>
+           <div id="proof-area" class="hidden border-t border-white/10 pt-4 space-y-3">
+             <p class="text-gray-300 text-sm">Transfer ke <span class="text-white">Bank BCA 1234 5678 90</span> atas nama <span class="text-white">Panitia Domba Cup 2025</span>, lalu upload bukti pembayaran di bawah ini.</p>
+             <label class="block text-gray-400 text-sm">Bukti Pembayaran</label>
+             <input type="file" id="proof-file" accept="image/*,.pdf" class="w-full text-sm text-gray-300">
+             <button id="btn-upload-proof" type="button" class="w-full bg-brand-red text-white py-2.5 rounded-sm text-sm font-medium hover:bg-red-600 transition-colors">Upload Bukti Pembayaran</button>
+             <p id="proof-feedback" class="text-xs text-center hidden"></p>
+           </div>
+           
+           <p class="text-gray-500 text-xs text-center">
+             Dengan melanjutkan, kamu menyetujui syarat & ketentuan Domba Cup 2025
+           </p>
         </div>
       </div>
     </div>
@@ -770,11 +792,11 @@
       <div>
         <h4 class="text-white font-light mb-6">Tautan Cepat</h4>
         <ul class="space-y-3">
-          <li><a href="./index.html" class="text-gray-400 hover:text-white text-sm transition-colors">Beranda</a></li>
-          <li><a href="./registration.html" class="text-gray-400 hover:text-white text-sm transition-colors">Daftar Tim</a></li>
+          <li><a href="./index.php" class="text-gray-400 hover:text-white text-sm transition-colors">Beranda</a></li>
+          <li><a href="./registration.php" class="text-gray-400 hover:text-white text-sm transition-colors">Daftar Tim</a></li>
           <li><a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Jadwal Pertandingan</a></li>
-          <li><a href="./ticket.html" class="text-brand-yellow font-light text-sm transition-colors">Beli Tiket</a></li>
-          <li><a href="./index.html" class="text-gray-400 hover:text-white text-sm transition-colors">Tentang Kami</a></li>
+          <li><a href="./ticket.php" class="text-brand-yellow font-light text-sm transition-colors">Beli Tiket</a></li>
+          <li><a href="./index.php" class="text-gray-400 hover:text-white text-sm transition-colors">Tentang Kami</a></li>
         </ul>
       </div>
       
@@ -811,7 +833,159 @@
 </footer>
 
   <script>
-// Interactive elements can be handled here if needed
+    const API_BASE = '/Domba-Cup/api';
+    let currentTicketId = null;
+
+    function flash(el, message, type) {
+      const ok = type === 'success';
+      el.textContent = message;
+      el.className = 'text-xs text-center ' + (ok ? 'text-green-400' : 'text-red-400');
+      el.classList.remove('hidden');
+    }
+
+    document.getElementById('btn-submit-ticket').addEventListener('click', async () => {
+      const name = document.getElementById('ticket-buyer-name').value.trim();
+      const email = document.getElementById('ticket-buyer-email').value.trim();
+      const phone = document.getElementById('ticket-buyer-phone').value.trim();
+      const qty = parseInt(document.getElementById('ticket-quantity').value || '1', 10);
+      const feedback = document.getElementById('ticket-feedback');
+
+      if (!name || !email || !phone || !qty) {
+        flash(feedback, 'Nama, email, phone, dan jumlah wajib diisi.', 'error');
+        return;
+      }
+
+      const payload = {
+        match_id: 'grandstand-garuda-elang',
+        match_label: 'Grandstand - Garuda FC vs Elang United',
+        buyer_name: name,
+        buyer_email: email,
+        buyer_phone: phone,
+        quantity: qty,
+        unit_price: 50000,
+        total_price: 50000 * qty,
+        payment_method: 'transfer_bank'
+      };
+
+      feedback.classList.remove('hidden');
+      flash(feedback, 'Memproses pesanan...', 'error');
+
+      try {
+        const res = await fetch(API_BASE + '/purchase.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const json = await res.json();
+        if (json.success) {
+          currentTicketId = json.data.ticket_id;
+          flash(feedback, 'Pesanan dibuat. Silakan upload bukti pembayaran.', 'success');
+          document.getElementById('proof-area').classList.remove('hidden');
+          document.getElementById('btn-submit-ticket').disabled = true;
+        } else {
+          flash(feedback, json.message || 'Gagal membuat pesanan.', 'error');
+        }
+      } catch (err) {
+        flash(feedback, 'Terjadi kesalahan koneksi.', 'error');
+      }
+    });
+
+    document.getElementById('btn-upload-proof').addEventListener('click', async () => {
+      const fileInput = document.getElementById('proof-file');
+      const proofFeedback = document.getElementById('proof-feedback');
+      const ticketId = currentTicketId;
+
+      if (!ticketId) {
+        flash(proofFeedback, 'Pesanan belum dibuat.', 'error');
+        return;
+      }
+      if (!fileInput.files.length) {
+        flash(proofFeedback, 'Pilih file bukti pembayaran terlebih dahulu.', 'error');
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append('ticket_id', ticketId);
+      formData.append('payment_proof', fileInput.files[0]);
+
+      try {
+        const res = await fetch(API_BASE + '/upload-proof.php', {
+          method: 'POST',
+          body: formData
+        });
+        const json = await res.json();
+        if (json.success) {
+          flash(proofFeedback, 'Bukti pembayaran berhasil diupload. Menunggu verifikasi admin.', 'success');
+          document.getElementById('btn-upload-proof').disabled = true;
+          document.getElementById('proof-file').disabled = true;
+        } else {
+          flash(proofFeedback, json.message || 'Gagal upload bukti.', 'error');
+        }
+      } catch (err) {
+        flash(proofFeedback, 'Terjadi kesalahan koneksi.', 'error');
+      }
+    });
+
+    // Mobile menu toggle
+    const menuBtnTicket = document.getElementById('mobile-menu-btn-ticket');
+    const mobileNavTicket = document.getElementById('mobile-nav-ticket');
+    if (menuBtnTicket && mobileNavTicket) {
+      menuBtnTicket.addEventListener('click', () => mobileNavTicket.classList.toggle('hidden'));
+    }
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href === '#') return;
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          if (mobileNavTicket) mobileNavTicket.classList.add('hidden');
+        }
+      });
+    });
+
+    // Live price calculator
+    const qtySelect = document.getElementById('ticket-quantity');
+    const unitPrice = 50000;
+    if (qtySelect) {
+      qtySelect.addEventListener('change', () => {
+        const qty = parseInt(qtySelect.value || '1', 10);
+        const total = unitPrice * qty;
+        const totalEl = document.getElementById('ticket-total-price');
+        if (totalEl) totalEl.textContent = 'Rp ' + total.toLocaleString('id-ID');
+      });
+    }
+
+    // Ticket type card selection
+    document.querySelectorAll('.ticket-type-card').forEach(card => {
+      card.addEventListener('click', () => {
+        document.querySelectorAll('.ticket-type-card').forEach(c => {
+          c.classList.remove('border-brand-red', 'ring-1', 'ring-brand-red');
+          c.classList.add('border-white/10');
+        });
+        card.classList.remove('border-white/10');
+        card.classList.add('border-brand-red', 'ring-1', 'ring-brand-red');
+      });
+    });
+
+    // FAQ Accordion
+    document.querySelectorAll('.faq-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const content = btn.nextElementSibling;
+        const icon = btn.querySelector('.faq-icon');
+        if (!content) return;
+        if (content.classList.contains('hidden')) {
+          content.classList.remove('hidden');
+          if (icon) icon.style.transform = 'rotate(180deg)';
+        } else {
+          content.classList.add('hidden');
+          if (icon) icon.style.transform = 'rotate(0deg)';
+        }
+      });
+    });
   </script>
 </body>
 </html>

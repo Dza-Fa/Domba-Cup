@@ -4,10 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Domba Cup</title>
-  <link href="./dist/output.css" rel="stylesheet">
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -16,9 +13,11 @@
   tailwind.config = {
     theme: {
       extend: {
-        fontFamily: {
-          sans: ['Inter', 'sans-serif'],
-        },
+        fontFamily: { sans: ['Inter', 'sans-serif'] },
+        colors: {
+          brand: { red: '#ff3a1a', yellow: '#ffd600' },
+          dark: { 900: '#111111', 800: '#1a1a1a', 700: '#2a2a2a' }
+        }
       }
     }
   }
@@ -35,16 +34,27 @@
       <span class="text-white font-normal text-xl tracking-wider">DOMBA CUP</span>
     </div>
     
+    <nav id="mobile-nav" class="hidden md:hidden absolute top-full left-0 w-full bg-dark-800 border-b border-white/10 p-4 space-y-3">
+      <a href="#about" class="block text-white text-sm">Tentang</a>
+      <a href="#" class="block text-gray-400 text-sm">Kategori</a>
+      <a href="#" class="block text-gray-400 text-sm">Jadwal</a>
+      <a href="./ticket.php" class="block text-gray-400 text-sm">Tiket</a>
+      <a href="./registration.php" class="block bg-brand-red text-white px-4 py-2 rounded text-sm text-center">Daftar Tim</a>
+    </nav>
     <!-- Desktop Navigation -->
     <nav class="hidden md:flex items-center gap-8">
       <a href="#about" class="text-[#f5f5f0] hover:text-[#ffd600] text-sm font-medium transition-colors">Tentang</a>
       <a href="#" class="text-[#f5f5f0] hover:text-[#ffd600] text-sm font-medium transition-colors">Kategori</a>
       <a href="#" class="text-[#f5f5f0] hover:text-[#ffd600] text-sm font-medium transition-colors">Jadwal</a>
-      <a href="./ticket.html" class="text-[#f5f5f0] hover:text-[#ffd600] text-sm font-medium transition-colors">Tiket</a>
+      <a href="./ticket.php" class="text-[#f5f5f0] hover:text-[#ffd600] text-sm font-medium transition-colors">Tiket</a>
     </nav>
     
+    <!-- Mobile nav toggle -->
+    <button id="mobile-menu-btn" class="md:hidden text-white text-2xl" aria-label="Menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
     <!-- CTA Button -->
-    <a href="./registration.html" class="bg-[#ff3a1a] text-white px-6 py-2.5 rounded-sm border-2 border-[#ff3a1a] shadow-[4px_4px_0px_0px_#ffd600] text-sm font-bold hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_#ffd600] transition-all uppercase tracking-wide">
+    <a href="./registration.php" class="bg-[#ff3a1a] text-white px-6 py-2.5 rounded-sm border-2 border-[#ff3a1a] shadow-[4px_4px_0px_0px_#ffd600] text-sm font-bold hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_#ffd600] transition-all uppercase tracking-wide">
       Daftar Tim
     </a>
     
@@ -78,10 +88,10 @@
     
     <!-- Action Buttons -->
     <div class="flex flex-col sm:flex-row gap-6 mb-20">
-      <a href="./registration.html" class="bg-[#ff3a1a] text-white px-10 py-4 rounded-sm border-2 border-[#ff3a1a] shadow-[6px_6px_0px_0px_#ffd600] tracking-wider hover:translate-y-[2px] hover:shadow-[4px_4px_0px_0px_#ffd600] transition-all uppercase inline-block text-center">
+      <a href="./registration.php" class="bg-[#ff3a1a] text-white px-10 py-4 rounded-sm border-2 border-[#ff3a1a] shadow-[6px_6px_0px_0px_#ffd600] tracking-wider hover:translate-y-[2px] hover:shadow-[4px_4px_0px_0px_#ffd600] transition-all uppercase inline-block text-center">
         Daftar Tim
       </a>
-      <a href="./ticket.html" class="border-2 border-[#ffd600] text-[#ffd600] px-10 py-4 rounded-sm shadow-[6px_6px_0px_0px_rgba(255,214,0,0.3)] tracking-wider hover:translate-y-[2px] hover:shadow-[4px_4px_0px_0px_rgba(255,214,0,0.3)] transition-all uppercase bg-black/20 backdrop-blur-sm inline-block text-center">
+      <a href="./ticket.php" class="border-2 border-[#ffd600] text-[#ffd600] px-10 py-4 rounded-sm shadow-[6px_6px_0px_0px_rgba(255,214,0,0.3)] tracking-wider hover:translate-y-[2px] hover:shadow-[4px_4px_0px_0px_rgba(255,214,0,0.3)] transition-all uppercase bg-black/20 backdrop-blur-sm inline-block text-center">
         Beli Tiket
       </a>
     </div>
@@ -96,22 +106,22 @@
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full pl-4">
         <!-- Days -->
         <div class="bg-[#0d0d0d]/50 border border-white/5 rounded-md p-4 flex flex-col items-center justify-center">
-          <span class="text-3xl md:text-4xl font-normal text-white mb-1">45</span>
+          <span class="text-3xl md:text-4xl font-normal text-white mb-1" data-countdown>45</span>
           <span class="text-[#6b7280] text-xs uppercase tracking-wider">Hari</span>
         </div>
         <!-- Hours -->
         <div class="bg-[#0d0d0d]/50 border border-white/5 rounded-md p-4 flex flex-col items-center justify-center">
-          <span class="text-3xl md:text-4xl font-normal text-white mb-1">12</span>
+          <span class="text-3xl md:text-4xl font-normal text-white mb-1" data-countdown>12</span>
           <span class="text-[#6b7280] text-xs uppercase tracking-wider">Jam</span>
         </div>
         <!-- Minutes -->
         <div class="bg-[#0d0d0d]/50 border border-white/5 rounded-md p-4 flex flex-col items-center justify-center">
-          <span class="text-3xl md:text-4xl font-normal text-white mb-1">30</span>
+          <span class="text-3xl md:text-4xl font-normal text-white mb-1" data-countdown>30</span>
           <span class="text-[#6b7280] text-xs uppercase tracking-wider">Menit</span>
         </div>
         <!-- Seconds -->
         <div class="bg-[#0d0d0d]/50 border border-white/5 rounded-md p-4 flex flex-col items-center justify-center">
-          <span class="text-3xl md:text-4xl font-normal text-[#ff3a1a] mb-1">00</span>
+          <span class="text-3xl md:text-4xl font-normal text-[#ff3a1a] mb-1" data-countdown>00</span>
           <span class="text-[#6b7280] text-xs uppercase tracking-wider">Detik</span>
         </div>
       </div>
@@ -211,10 +221,10 @@
       <div class="md:col-span-3">
         <h4 class="text-white font-normal mb-6 uppercase tracking-wider">Tautan Cepat</h4>
         <ul class="flex flex-col gap-4">
-          <li><a href="./index.html" class="text-[#9ca3af] hover:text-[#ffd600] transition-colors text-sm flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs text-[#ff3a1a]"></i> Beranda</a></li>
-          <li><a href="./registration.html" class="text-[#9ca3af] hover:text-[#ffd600] transition-colors text-sm flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs text-[#ff3a1a]"></i> Daftar Tim</a></li>
+          <li><a href="./index.php" class="text-[#9ca3af] hover:text-[#ffd600] transition-colors text-sm flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs text-[#ff3a1a]"></i> Beranda</a></li>
+          <li><a href="./registration.php" class="text-[#9ca3af] hover:text-[#ffd600] transition-colors text-sm flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs text-[#ff3a1a]"></i> Daftar Tim</a></li>
           <li><a href="#" class="text-[#9ca3af] hover:text-[#ffd600] transition-colors text-sm flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs text-[#ff3a1a]"></i> Jadwal Pertandingan</a></li>
-          <li><a href="./ticket.html" class="text-[#9ca3af] hover:text-[#ffd600] transition-colors text-sm flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs text-[#ff3a1a]"></i> Beli Tiket</a></li>
+          <li><a href="./ticket.php" class="text-[#9ca3af] hover:text-[#ffd600] transition-colors text-sm flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs text-[#ff3a1a]"></i> Beli Tiket</a></li>
           <li><a href="#about" class="text-[#9ca3af] hover:text-[#ffd600] transition-colors text-sm flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs text-[#ff3a1a]"></i> Tentang Kami</a></li>
         </ul>
       </div>
@@ -256,7 +266,95 @@
 </section>
 
   <script>
-// No JavaScript code required here currently.
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+    if (menuBtn && mobileNav) {
+      menuBtn.addEventListener('click', () => {
+        mobileNav.classList.toggle('hidden');
+      });
+    }
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href === '#') return;
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          if (mobileNav) mobileNav.classList.add('hidden');
+        }
+      });
+    });
+
+    // Countdown timer (target: 31 Juli 2025)
+    const targetDate = new Date('2025-07-31T00:00:00+07:00').getTime();
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const diff = targetDate - now;
+      if (diff <= 0) {
+        document.querySelectorAll('[data-countdown]').forEach(el => {
+          const parent = el.closest('div');
+          if (parent) {
+            const span = parent.querySelector('span:last-child');
+            if (span) span.textContent = 'Berakhir';
+          }
+        });
+        return;
+      }
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+      const map = { 0: days, 1: hours, 2: minutes, 3: seconds };
+      document.querySelectorAll('[data-countdown]').forEach((el, idx) => {
+        if (map[idx] !== undefined) el.textContent = map[idx];
+      });
+    }
+    document.querySelectorAll('[data-countdown]').forEach(el => el.setAttribute('data-countdown', ''));
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // Contact form submit
+    const API_BASE = '/Domba-Cup/api';
+    function flash(el, message, type) {
+      const ok = type === 'success';
+      el.textContent = message;
+      el.className = 'text-xs mt-2 ' + (ok ? 'text-green-400' : 'text-red-400');
+      el.classList.remove('hidden');
+    }
+    document.getElementById('contact-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const el = document.getElementById('contact-feedback');
+      flash(el, 'Mengirim...', 'error');
+      const payload = {
+        name: document.getElementById('contact-name').value.trim(),
+        email: document.getElementById('contact-email').value.trim(),
+        message: document.getElementById('contact-message').value.trim()
+      };
+      if (!payload.name || !payload.email || !payload.message) {
+        flash(el, 'Nama, email, dan pesan wajib diisi.', 'error');
+        return;
+      }
+      try {
+        const res = await fetch(API_BASE + '/contact.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const json = await res.json();
+        if (json.success) {
+          flash(el, 'Pesan berhasil dikirim.', 'success');
+          document.getElementById('contact-form').reset();
+        } else {
+          flash(el, json.message || 'Gagal mengirim pesan.', 'error');
+        }
+      } catch (err) {
+        flash(el, 'Terjadi kesalahan koneksi.', 'error');
+      }
+    });
   </script>
 </body>
 </html>
